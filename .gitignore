@@ -1,0 +1,12 @@
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+#  Local .terraform directories
+**/.terraform/*
+
+# Variables
+*.tfvars
+
+# Cache
+.DS_Store
