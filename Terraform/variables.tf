@@ -1,5 +1,6 @@
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
+variable "owner" {}
 
 variable "region" {
   default = "ap-northeast-1"

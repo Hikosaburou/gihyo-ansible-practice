@@ -16,7 +16,7 @@ resource "aws_vpc" "vpc01" {
   enable_dns_hostnames = true
 
   tags {
-    Name = "ma-yazawa-vpc01"
+    Name = "vpc01"
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_route_table" "public" {
   }
 
   tags {
-    Name = "ma-yazawa-rtb"
+    Name = "rtb"
   }
 }
 
@@ -90,6 +90,7 @@ resource "aws_instance" "web01" {
 
   tags {
     Name = "web01"
+    owner = "${var.owner}"
   }
 }
 
