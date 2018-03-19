@@ -36,6 +36,23 @@ variable "amis_centos6" {
     sa-east-1      = "ami-864f2dea"
   }
 }
+
+variable "amis_centos7" {
+  type = "map"
+
+  default = {
+    us-east-1      = "ami-500d8546"
+    us-west-2      = "ami-7dbe9a18"
+    us-west-1      = "ami-252a0f45"
+    eu-west-1      = "ami-8f043ee9"
+    eu-central-1   = "ami-11a2707e"
+    ap-northeast-1 = "ami-25bd2743"
+    ap-southeast-1 = "ami-4d348a2e"
+    ap-southeast-2 = "ami-7a959b19"
+    sa-east-1      = "ami-864f2dea"
+  }
+}
+
 variable "key_name" {
   description = "Desired name of AWS key pair"
 }
