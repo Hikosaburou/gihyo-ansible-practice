@@ -1,0 +1,22 @@
+---
+ansible_ssh_user: centos
+ansible_ssh_private_key_file: ~/.ssh/keys/my_test_key
+is_development: True
+
+# for apache
+apache_document_root: /var/www/html/public
+apache_server_name: gihyo-devops-ansible3.dev
+
+# for laravel and apache
+deploy_laravel_root: /var/www/html
+deploy_laravel_env: local
+deploy_laravel_debug: True
+deploy_laravel_app_key: OhJgoklVjK2F2ropzSnZWV5o9bASjVUd
+
+# for laravel and postgresql
+db_connection: pgsql
+db_host: "null"
+db_database: app
+db_test_database: app_test
+db_username: awsec2
+db_password: pass

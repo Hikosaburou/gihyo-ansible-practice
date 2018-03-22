@@ -70,6 +70,15 @@ resource "aws_security_group_rule" "i_ssh" {
   security_group_id = "${aws_security_group.web.id}"
 }
 
+resource "aws_security_group_rule" "i_http" {
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["${var.my_public_ip}"]
+  security_group_id = "${aws_security_group.web.id}"
+}
+
 resource "aws_security_group_rule" "e_any" {
   type              = "egress"
   from_port         = 0
@@ -80,7 +89,7 @@ resource "aws_security_group_rule" "e_any" {
 }
 
 resource "aws_instance" "web01" {
-  ami                         = "${lookup(var.amis, var.region)}"
+  ami                         = "${lookup(var.amis_centos7, var.region)}"
   instance_type               = "t2.micro"
   key_name                    = "${aws_key_pair.auth.id}"
   subnet_id                   = "${aws_subnet.public-a.id}"
