@@ -100,6 +100,8 @@ resource "aws_instance" "web01" {
   tags {
     Name = "web01"
     owner = "${var.owner}"
+    ansible-web = "enable"
+    ansible-db = "enable"
   }
 }
 
